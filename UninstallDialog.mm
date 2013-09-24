@@ -39,7 +39,7 @@
 
   [window_ setDelegate:self];
   [window_ center];
-  [window_ orderFrontRegardless];
+  [window_ makeKeyAndOrderFront:self];
 }
 
 -(void)setup {
