@@ -17,6 +17,12 @@ NSMutableAttributedString* colorizeString(NSString* string, NSColor* color) {
 
 int main(int argc, const char * argv[]) {
   @autoreleasepool {
+    bool showVersion = argc==2 && strcmp(argv[1], "--version")==0;
+    if (showVersion) {
+      printf("%s\n", [[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"] UTF8String]);
+      return 0;
+    }
+    
     bool headless = argc==2 && strcmp(argv[1], "--headless")==0;
     NSString* scriptPath = [[NSBundle mainBundle] pathForResource:@"uninstall" ofType:@"applescript"];
     if (!scriptPath) {
