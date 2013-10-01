@@ -82,10 +82,10 @@ GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES
 //
 // Specific configuration for TotalFinder uninstaller
 //
-WRAPPER_EXTENSION = app
 INFOPLIST_FILE = ../uninstaller-resources/Uninstaller-Info.plist
 GCC_PREFIX_HEADER = Uninstaller.pch
 PRODUCT_NAME = TotalFinder Uninstaller
+WRAPPER_EXTENSION = app
 //
 // Dynamic configuration collected from all sections above
 //
