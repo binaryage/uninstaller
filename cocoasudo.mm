@@ -159,7 +159,10 @@ int cocoaSudo(char *executable, char *commandArgs[], char *icon, char *prompt) {
 		size_t bytesRead;
     
 		flags = kAuthorizationFlagDefaults;
-		status = AuthorizationExecuteWithPrivileges(authRef, executable, flags, commandArgs, &ioPipe);
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"		
+    status = AuthorizationExecuteWithPrivileges(authRef, executable, flags, commandArgs, &ioPipe);
+#pragma clang diagnostic pop
     
 		/* Just pipe processes' stdout to our stdout for now; hopefully can add stdin pipe later as well */
 		
