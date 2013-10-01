@@ -11,10 +11,6 @@
 		D605141717EFCC6A00BAC816 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D605141617EFCC6A00BAC816 /* Security.framework */; };
 		D605141A17EFCC9500BAC816 /* cocoasudo in Resources */ = {isa = PBXBuildFile; fileRef = D605140617EFCB5B00BAC816 /* cocoasudo */; };
 		D605142417F0C5F200BAC816 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D605141617EFCC6A00BAC816 /* Security.framework */; };
-		D6407F6D17FA719D001D1D21 /* Uninstaller_Debug_cocoasudo.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D6407F6917FA719D001D1D21 /* Uninstaller_Debug_cocoasudo.xcconfig */; };
-		D6407F6E17FA719D001D1D21 /* Uninstaller_Debug_Uninstaller.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D6407F6A17FA719D001D1D21 /* Uninstaller_Debug_Uninstaller.xcconfig */; };
-		D6407F6F17FA719D001D1D21 /* Uninstaller_Release_cocoasudo.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D6407F6B17FA719D001D1D21 /* Uninstaller_Release_cocoasudo.xcconfig */; };
-		D6407F7017FA719D001D1D21 /* Uninstaller_Release_Uninstaller.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D6407F6C17FA719D001D1D21 /* Uninstaller_Release_Uninstaller.xcconfig */; };
 		D64CA6CF17EDF89C00522544 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64CA6CE17EDF89C00522544 /* Cocoa.framework */; };
 		D6780FF217F118B500A3BBD8 /* Uninstaller-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6780FEF17F118B500A3BBD8 /* Uninstaller-Info.plist */; };
 		D6780FF317F118B500A3BBD8 /* UninstallerIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = D6780FF017F118B500A3BBD8 /* UninstallerIcon.icns */; };
@@ -61,7 +57,7 @@
 		D6407F6B17FA719D001D1D21 /* Uninstaller_Release_cocoasudo.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Uninstaller_Release_cocoasudo.xcconfig; path = Uninstaller.xcconfigs/Uninstaller_Release_cocoasudo.xcconfig; sourceTree = "<group>"; };
 		D6407F6C17FA719D001D1D21 /* Uninstaller_Release_Uninstaller.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Uninstaller_Release_Uninstaller.xcconfig; path = Uninstaller.xcconfigs/Uninstaller_Release_Uninstaller.xcconfig; sourceTree = "<group>"; };
 		D6407F7117FA72CA001D1D21 /* cocoasudo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "cocoasudo-Prefix.pch"; sourceTree = "<group>"; };
-		D64CA6CB17EDF89C00522544 /* TotalFinder Uninstaller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TotalFinder Uninstaller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D64CA6CB17EDF89C00522544 /* .app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = .app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D64CA6CE17EDF89C00522544 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D64CA6D117EDF89C00522544 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		D64CA6D217EDF89C00522544 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -132,7 +128,7 @@
 		D64CA6CC17EDF89C00522544 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D64CA6CB17EDF89C00522544 /* TotalFinder Uninstaller.app */,
+				D64CA6CB17EDF89C00522544 /* .app */,
 				D605140617EFCB5B00BAC816 /* cocoasudo */,
 			);
 			name = Products;
@@ -234,7 +230,7 @@
 			);
 			name = Uninstaller;
 			productName = Uninstaller;
-			productReference = D64CA6CB17EDF89C00522544 /* TotalFinder Uninstaller.app */;
+			productReference = D64CA6CB17EDF89C00522544 /* .app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -272,17 +268,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6407F7017FA719D001D1D21 /* Uninstaller_Release_Uninstaller.xcconfig in Resources */,
 				D678100E17F11CE200A3BBD8 /* uninstall.applescript in Resources */,
-				D6407F6D17FA719D001D1D21 /* Uninstaller_Debug_cocoasudo.xcconfig in Resources */,
 				D6AE595B17F1182E00B8CE99 /* OverlayIcon.png in Resources */,
 				D6780FFA17F1199700A3BBD8 /* Localizable.strings in Resources */,
 				D6780FF217F118B500A3BBD8 /* Uninstaller-Info.plist in Resources */,
-				D6407F6F17FA719D001D1D21 /* Uninstaller_Release_cocoasudo.xcconfig in Resources */,
 				D6780FF317F118B500A3BBD8 /* UninstallerIcon.icns in Resources */,
 				D678109017F13C0100A3BBD8 /* MainMenu.xib in Resources */,
 				D605141A17EFCC9500BAC816 /* cocoasudo in Resources */,
-				D6407F6E17FA719D001D1D21 /* Uninstaller_Debug_Uninstaller.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
