@@ -1,5 +1,5 @@
-typedef void (^UninstallActionHandler)();
-typedef NSString* (^StringTranslationHandler)(NSString* original);
+typedef void (^ UninstallActionHandler)();
+typedef NSString* (^ StringTranslationHandler)(NSString* original);
 
 typedef enum {
   UNINSTALL_DIALOG_UNDEFINED,
@@ -10,7 +10,7 @@ typedef enum {
 } TUninstallDialogState;
 
 @interface UninstallDialog : NSObject<NSWindowDelegate> {
-@public
+  @public
   IBOutlet NSWindow* window_;
   IBOutlet NSTextField* dialogTitle_;
   IBOutlet NSTextField* dialogText_;
@@ -22,7 +22,7 @@ typedef enum {
   IBOutlet NSProgressIndicator* progressIndicator_;
   IBOutlet NSTextView* console_;
   IBOutlet NSFont* consoleFont_;
-  
+
   UninstallActionHandler uninstallAction_;
   TUninstallDialogState state_;
   StringTranslationHandler translator_;
@@ -50,7 +50,6 @@ typedef enum {
 -(IBAction)showCancelAndUninstallButtons:(id)sender;
 -(IBAction)showQuitButton:(id)sender;
 -(IBAction)showProgressIndicator:(id)sender;
-
 
 -(void)clearConsole;
 -(void)printToConsole:(NSMutableAttributedString*)text;

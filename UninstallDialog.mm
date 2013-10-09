@@ -2,7 +2,7 @@
 
 @implementation UninstallDialog
 
--(UninstallDialog*)init {
+-(UninstallDialog*) init {
   if (self = [super init]) {
     state_ = UNINSTALL_DIALOG_UNDEFINED;
     consoleFont_ = [NSFont fontWithName:@"Courier New" size:10];
@@ -11,30 +11,31 @@
   return self;
 }
 
--(void)setTranslator:(StringTranslationHandler)translator {
+-(void) setTranslator:(StringTranslationHandler)translator {
   translator_ = translator;
   if (!translator_) {
-    translator_ = ^(NSString* original) { // default pass through translator
+    translator_ = ^(NSString* original) {
+      // default pass through translator
       return original;
     };
   }
 }
 
--(void)setUnistallAction:(UninstallActionHandler)handler {
+-(void) setUnistallAction:(UninstallActionHandler)handler {
   uninstallAction_ = handler;
 }
 
--(void)show {
-
+-(void) show {
   NSArray* objects;
   BOOL nibOk = [[NSBundle mainBundle] loadNibNamed:@"UninstallDialog" owner:self topLevelObjects:&objects];
+
   if (!nibOk) {
     NSLog(@"unexpected error: loadNibNamed UninstallDialog failed");
     return;
   }
 
   [self setup];
-  
+
   [NSApp activateIgnoringOtherApps:YES];
 
   [window_ setDelegate:self];
@@ -42,9 +43,9 @@
   [window_ makeKeyAndOrderFront:self];
 }
 
--(void)setup {
+-(void) setup {
   [self toggleDetails:showDetails_];
-  
+
   // translate buttons
   [quitButton_ setTitle:translator_(@"Quit")];
   [uninstallButton_ setTitle:translator_(@"Uninstall")];
@@ -58,7 +59,7 @@
   [self transitionIntoState:UNINSTALL_DIALOG_NORMAL];
 }
 
--(bool)transitionIntoState:(TUninstallDialogState)state {
+-(bool) transitionIntoState:(TUninstallDialogState)state {
   if (state_ == state) {
     return false;
   }
@@ -82,14 +83,14 @@
   return true;
 }
 
--(IBAction)showCancelAndUninstallButtons:(id)sender {
+-(IBAction) showCancelAndUninstallButtons:(id)sender {
   [quitButton_ setHidden:YES];
   [progressIndicator_ setHidden:YES];
   [cancelButton_ setHidden:NO];
   [uninstallButton_ setHidden:NO];
 }
 
--(IBAction)showQuitButton:(id)sender {
+-(IBAction) showQuitButton:(id)sender {
   [progressIndicator_ setHidden:YES];
   [cancelButton_ setHidden:YES];
   [uninstallButton_ setHidden:YES];
@@ -97,7 +98,7 @@
   [progressIndicator_ stopAnimation:self];
 }
 
--(IBAction)showProgressIndicator:(id)sender {
+-(IBAction) showProgressIndicator:(id)sender {
   [quitButton_ setHidden:YES];
   [cancelButton_ setHidden:YES];
   [uninstallButton_ setHidden:YES];
@@ -109,7 +110,7 @@
   [NSApp stop:sender];
 }
 
--(IBAction)quit:(id)sender{
+-(IBAction) quit:(id)sender {
   [NSApp stop:sender];
 }
 
@@ -117,9 +118,10 @@
   uninstallAction_();
 }
 
-- (IBAction)toggleDetails:(id)sender {
+-(IBAction) toggleDetails:(id)sender {
   NSRect windowFrame = [window_ frame];
   CGFloat consoleHeight = 240 + 22; // 20px is bottom margin
+
   if ([sender state] == NSOffState) {
     windowFrame.origin.y += consoleHeight;
     windowFrame.size.height -= consoleHeight;
@@ -131,32 +133,32 @@
   }
 }
 
--(void)showDetails {
+-(void) showDetails {
   if ([showDetails_ state] == NSOffState) {
     [showDetails_ setState:NSOnState];
     [self toggleDetails:showDetails_];
   }
 }
 
--(void)presentErrorMessage:(NSMutableAttributedString*)consoleText {
+-(void) presentErrorMessage:(NSMutableAttributedString*)consoleText {
   [self printToConsole:consoleText];
 }
 
--(void)presentSuccessMessage:(NSMutableAttributedString*)consoleText {
+-(void) presentSuccessMessage:(NSMutableAttributedString*)consoleText {
   [self printToConsole:consoleText];
 }
 
-- (void)windowWillClose:(NSNotification *)notification {
+-(void) windowWillClose:(NSNotification*)notification {
   [self cancel:notification];
 }
 
--(void)printToConsole:(NSMutableAttributedString*)text {
+-(void) printToConsole:(NSMutableAttributedString*)text {
   [text addAttribute:NSFontAttributeName value:consoleFont_ range:NSMakeRange(0, [text length])];
   [[console_ textStorage] appendAttributedString:text];
   [console_ scrollRangeToVisible:NSMakeRange([[console_ string] length], 0)];
 }
 
--(void)clearConsole {
+-(void) clearConsole {
   [console_ setString:@""];
 }
 

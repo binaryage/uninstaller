@@ -4,16 +4,17 @@
 
 int runUninstallerScript(NSString* scriptPath, NSString* cocoasudoPath, NSString* overlayIconPath, NSString* prompt, TaskPresentationHandler presentationHandler, TaskPreLaunchHandler prelaunchHandler) {
   NSTask* task = [[NSTask alloc] init];
+
   if (presentationHandler) {
     NSPipe* pipe = [NSPipe pipe];
     NSFileHandle* readStdOutHandle = [pipe fileHandleForReading];
-    
+
     [readStdOutHandle setReadabilityHandler:^(NSFileHandle* file) {
-     NSData* data = [file availableData];
-     NSString* text = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-     presentationHandler(text);
+       NSData* data = [file availableData];
+       NSString* text = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+       presentationHandler(text);
      }];
-    
+
     // redirect both stdout and stderr into our pipe
     [task setStandardOutput:pipe];
     [task setStandardError:pipe];
@@ -25,15 +26,15 @@ int runUninstallerScript(NSString* scriptPath, NSString* cocoasudoPath, NSString
     [task setArguments:@[scriptPath]];
   } else {
     // in interactive mode apply cocoasudo wrapper
-    
+
     // copy icon into /tmp to be sure it will get displayed (the security dialog is picky about correct rights)
     NSString* tempIconPath = @"/tmp/totalfinder-uninstaller-overlay-icon.png";
     if (overlayIconPath) {
       NSFileManager* fileManager = [[NSFileManager alloc] init];
       [fileManager copyItemAtPath:overlayIconPath toPath:tempIconPath error:nil];
-      [fileManager setAttributes:@{NSFilePosixPermissions: @0644} ofItemAtPath:tempIconPath error:nil];
+      [fileManager setAttributes:@{ NSFilePosixPermissions: @0644 } ofItemAtPath:tempIconPath error:nil];
     }
-    
+
     // set task arguments
     [task setLaunchPath:cocoasudoPath];
     [task setArguments:@[[NSString stringWithFormat:@"--prompt=%@", prompt],
@@ -46,7 +47,7 @@ int runUninstallerScript(NSString* scriptPath, NSString* cocoasudoPath, NSString
       return 0; // cancelled
     }
   }
-  
+
   [task launch];
   [task waitUntilExit];
   return [task terminationStatus];
@@ -56,17 +57,21 @@ int checkAdminPrivileges(AuthorizationFlags flags) {
   int res = 0;
   OSStatus status;
   AuthorizationRef authorizationRef;
-  
+
   status = AuthorizationCreate(NULL, kAuthorizationEmptyEnvironment, kAuthorizationFlagDefaults, &authorizationRef);
   if (status != errAuthorizationSuccess) {
     NSLog(@"unexpected error: AuthorizationCreate returned with status %d", status);
     return 2;
   }
-  
+
   // kAuthorizationRightExecute == "system.privilege.admin" == running with sudo
-  AuthorizationItem right = {kAuthorizationRightExecute, 0, NULL, 0};
-  AuthorizationRights rights = {1, &right};
-  
+  AuthorizationItem right = {
+    kAuthorizationRightExecute, 0, NULL, 0
+  };
+  AuthorizationRights rights = {
+    1, &right
+  };
+
   // call AuthorizationCopyRights to determine current rights
   status = AuthorizationCopyRights(authorizationRef, &rights, NULL, flags, NULL);
   if (status != errAuthorizationSuccess) {
@@ -80,13 +85,13 @@ int checkAdminPrivileges(AuthorizationFlags flags) {
       goto bailout;
     }
   }
-  
+
 bailout:
   status = AuthorizationFree(authorizationRef, kAuthorizationFlagDefaults);
   if (status != errAuthorizationSuccess) {
     NSLog(@"unexpected error: AuthorizationFree returned with status %d", status);
     res = 4;
   }
-  
+
   return res;
 }
