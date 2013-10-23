@@ -52,6 +52,7 @@
 		D605140617EFCB5B00BAC816 /* cocoasudo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = cocoasudo; sourceTree = BUILT_PRODUCTS_DIR; };
 		D605140717EFCB5B00BAC816 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D605141617EFCC6A00BAC816 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D62ACF0F18181D64007FF9AD /* Dutch */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Dutch; path = ../../i18n/uninstaller/Dutch.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D6407F6917FA719D001D1D21 /* Uninstaller_Debug_cocoasudo.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Uninstaller_Debug_cocoasudo.xcconfig; path = Uninstaller.xcconfigs/Uninstaller_Debug_cocoasudo.xcconfig; sourceTree = "<group>"; };
 		D6407F6A17FA719D001D1D21 /* Uninstaller_Debug_Uninstaller.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Uninstaller_Debug_Uninstaller.xcconfig; path = Uninstaller.xcconfigs/Uninstaller_Debug_Uninstaller.xcconfig; sourceTree = "<group>"; };
 		D6407F6B17FA719D001D1D21 /* Uninstaller_Release_cocoasudo.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Uninstaller_Release_cocoasudo.xcconfig; path = Uninstaller.xcconfigs/Uninstaller_Release_cocoasudo.xcconfig; sourceTree = "<group>"; };
@@ -251,6 +252,7 @@
 				Base,
 				Czech,
 				English,
+				Dutch,
 			);
 			mainGroup = D64CA6C217EDF89C00522544;
 			productRefGroup = D64CA6CC17EDF89C00522544 /* Products */;
@@ -317,6 +319,7 @@
 			children = (
 				D6780FF817F1199700A3BBD8 /* Czech */,
 				D6780FF917F1199700A3BBD8 /* English */,
+				D62ACF0F18181D64007FF9AD /* Dutch */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
