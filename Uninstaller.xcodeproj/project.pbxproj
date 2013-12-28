@@ -11,6 +11,7 @@
 		D605141717EFCC6A00BAC816 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D605141617EFCC6A00BAC816 /* Security.framework */; };
 		D605141A17EFCC9500BAC816 /* cocoasudo in Resources */ = {isa = PBXBuildFile; fileRef = D605140617EFCB5B00BAC816 /* cocoasudo */; };
 		D605142417F0C5F200BAC816 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D605141617EFCC6A00BAC816 /* Security.framework */; };
+		D636C96A186E51AE005200EF /* Uninstaller-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6780FEF17F118B500A3BBD8 /* Uninstaller-Info.plist */; };
 		D64CA6CF17EDF89C00522544 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64CA6CE17EDF89C00522544 /* Cocoa.framework */; };
 		D6780FF317F118B500A3BBD8 /* UninstallerIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = D6780FF017F118B500A3BBD8 /* UninstallerIcon.icns */; };
 		D6780FFA17F1199700A3BBD8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D6780FF717F1199700A3BBD8 /* Localizable.strings */; };
@@ -52,6 +53,14 @@
 		D605140717EFCB5B00BAC816 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D605141617EFCC6A00BAC816 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D62ACF0F18181D64007FF9AD /* Dutch */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Dutch; path = ../../i18n/uninstaller/Dutch.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D636C966186E51A7005200EF /* zh_CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_CN; path = ../../i18n/uninstaller/zh_CN.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D636C967186E51AE005200EF /* Polish */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Polish; path = ../../i18n/uninstaller/Polish.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D636C968186E51AE005200EF /* Portuguese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Portuguese; path = ../../i18n/uninstaller/Portuguese.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D636C969186E51AE005200EF /* Russian */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Russian; path = ../../i18n/uninstaller/Russian.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D636C96B186E51B5005200EF /* Hindi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Hindi; path = ../../i18n/uninstaller/Hindi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D636C96C186E51B5005200EF /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = ../../i18n/uninstaller/Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D636C96D186E51B5005200EF /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ../../i18n/uninstaller/ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D636C96E186E51BB005200EF /* Croatian */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Croatian; path = ../../i18n/uninstaller/Croatian.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D6407F6917FA719D001D1D21 /* Uninstaller_Debug_cocoasudo.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Uninstaller_Debug_cocoasudo.xcconfig; path = Uninstaller.xcconfigs/Uninstaller_Debug_cocoasudo.xcconfig; sourceTree = "<group>"; };
 		D6407F6A17FA719D001D1D21 /* Uninstaller_Debug_Uninstaller.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Uninstaller_Debug_Uninstaller.xcconfig; path = Uninstaller.xcconfigs/Uninstaller_Debug_Uninstaller.xcconfig; sourceTree = "<group>"; };
 		D6407F6B17FA719D001D1D21 /* Uninstaller_Release_cocoasudo.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Uninstaller_Release_cocoasudo.xcconfig; path = Uninstaller.xcconfigs/Uninstaller_Release_cocoasudo.xcconfig; sourceTree = "<group>"; };
@@ -252,6 +261,14 @@
 				Czech,
 				English,
 				Dutch,
+				zh_CN,
+				Polish,
+				Portuguese,
+				Russian,
+				Hindi,
+				Japanese,
+				ko,
+				Croatian,
 			);
 			mainGroup = D64CA6C217EDF89C00522544;
 			productRefGroup = D64CA6CC17EDF89C00522544 /* Products */;
@@ -271,6 +288,7 @@
 			files = (
 				D678100E17F11CE200A3BBD8 /* uninstall.applescript in Resources */,
 				D6AE595B17F1182E00B8CE99 /* OverlayIcon.png in Resources */,
+				D636C96A186E51AE005200EF /* Uninstaller-Info.plist in Resources */,
 				D6780FFA17F1199700A3BBD8 /* Localizable.strings in Resources */,
 				D6780FF317F118B500A3BBD8 /* UninstallerIcon.icns in Resources */,
 				D678109017F13C0100A3BBD8 /* MainMenu.xib in Resources */,
@@ -318,6 +336,14 @@
 				D6780FF817F1199700A3BBD8 /* Czech */,
 				D6780FF917F1199700A3BBD8 /* English */,
 				D62ACF0F18181D64007FF9AD /* Dutch */,
+				D636C966186E51A7005200EF /* zh_CN */,
+				D636C967186E51AE005200EF /* Polish */,
+				D636C968186E51AE005200EF /* Portuguese */,
+				D636C969186E51AE005200EF /* Russian */,
+				D636C96B186E51B5005200EF /* Hindi */,
+				D636C96C186E51B5005200EF /* Japanese */,
+				D636C96D186E51B5005200EF /* ko */,
+				D636C96E186E51BB005200EF /* Croatian */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
