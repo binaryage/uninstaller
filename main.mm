@@ -43,7 +43,7 @@ int main(int argc, const char* argv[]) {
       // first check if we run with admin priviledges
       int isntAdmin = checkAdminPrivileges();
       if (isntAdmin) {
-        return errorCode(isntAdmin); // no admin priviledges or failed to check them
+        return errorCode(isntAdmin);  // no admin priviledges or failed to check them
       }
 
       // ok, we are running with sudo => run the uninstaller script without GUI hooks
@@ -53,10 +53,10 @@ int main(int argc, const char* argv[]) {
       UninstallDialog* dialog = [[UninstallDialog alloc] init];
 
       // setup simple translation service
-      auto translator = ^(NSString* original) {
+      auto translator = ^(NSString * original) {
         NSString* translation = NSLocalizedString(original, nil);
         if (![translation length]) {
-          return original; // fallback to original if don't have translation at hand
+          return original;  // fallback to original if don't have translation at hand
         }
         return translation;
       };
@@ -64,43 +64,43 @@ int main(int argc, const char* argv[]) {
 
       // called when user clicks the "uninstall" button (could be multiple times when script fails)
       auto action = ^() {
-        dispatch_async(dispatch_get_main_queue(), ^{ // all UI updates must be performed on the main thread
-              [dialog clearConsole];
-              [dialog printToConsole:colorizeString(translator(@"Running uninstall script:\n"), [NSColor blueColor])];
-            });
+        dispatch_async(dispatch_get_main_queue(), ^{  // all UI updates must be performed on the main thread
+          [dialog clearConsole];
+          [dialog printToConsole:colorizeString(translator(@"Running uninstall script:\n"), [NSColor blueColor])];
+        });
 
         // called when uninstall script task finishes
-        auto terminationHandler = ^(NSTask* task) {
-          dispatch_async(dispatch_get_main_queue(), ^{ // all UI updates must be performed on the main thread
-                int status = [task terminationStatus];
-                if (status == 0) {
-                  [dialog transitionIntoState:UNINSTALL_DIALOG_SUCCESS];
-                  [dialog presentSuccessMessage:colorizeString(translator(@"Uninstall script finished successfully.\n"), [NSColor blueColor])];
-                } else {
-                  [dialog transitionIntoState:UNINSTALL_DIALOG_ERROR];
-                  [dialog showDetails];
-                  if (status == 101) {
-                    [dialog presentErrorMessage:colorizeString(translator(@"Uninstall script needs admin rights.\n"), [NSColor redColor])];
-                  } else {
-                    NSString* failedMessage = [NSString stringWithFormat:translator(@"Uninstall script failed with error [%d].\n"), status];
-                    [dialog presentErrorMessage:colorizeString(failedMessage, [NSColor redColor])];
-                  }
-                }
-              });
+        auto terminationHandler = ^(NSTask * task) {
+          dispatch_async(dispatch_get_main_queue(), ^{  // all UI updates must be performed on the main thread
+            int status = [task terminationStatus];
+            if (status == 0) {
+              [dialog transitionIntoState:UNINSTALL_DIALOG_SUCCESS];
+              [dialog presentSuccessMessage:colorizeString(translator(@"Uninstall script finished successfully.\n"), [NSColor blueColor])];
+            } else {
+              [dialog transitionIntoState:UNINSTALL_DIALOG_ERROR];
+              [dialog showDetails];
+              if (status == 101) {
+                [dialog presentErrorMessage:colorizeString(translator(@"Uninstall script needs admin rights.\n"), [NSColor redColor])];
+              } else {
+                NSString* failedMessage = [NSString stringWithFormat:translator(@"Uninstall script failed with error [%d].\n"), status];
+                [dialog presentErrorMessage:colorizeString(failedMessage, [NSColor redColor])];
+              }
+            }
+          });
         };
 
         // called right before launching the task
-        auto prelaunchHandler = ^(NSTask* task) {
+        auto prelaunchHandler = ^(NSTask * task) {
           [task setTerminationHandler:terminationHandler];
           [dialog transitionIntoState:UNINSTALL_DIALOG_PROGRESS];
           return true;
         };
 
         // called continuously with stream of task's stdout+stderr output
-        auto outputHandler = ^(NSString* chunk) {
-          dispatch_async(dispatch_get_main_queue(), ^{ // all UI updates must be performed on the main thread
-                [dialog printToConsole:[[NSMutableAttributedString alloc] initWithString:chunk]];
-              });
+        auto outputHandler = ^(NSString * chunk) {
+          dispatch_async(dispatch_get_main_queue(), ^{  // all UI updates must be performed on the main thread
+            [dialog printToConsole:[[NSMutableAttributedString alloc] initWithString:chunk]];
+          });
         };
 
         // run uninstaller with our GUI hooks
@@ -113,9 +113,9 @@ int main(int argc, const char* argv[]) {
 
       // this is ugly, but quick solution without polluting AppDelegate with main logic
       gAppDidFinishLaunchingEvent = ^() {
-        dispatch_async(dispatch_get_main_queue(), ^{ // all UI updates must be performed on the main thread
-              [dialog show];
-            });
+        dispatch_async(dispatch_get_main_queue(), ^{  // all UI updates must be performed on the main thread
+          [dialog show];
+        });
       };
 
       // start GUI run loop

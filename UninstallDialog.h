@@ -1,5 +1,5 @@
-typedef void (^ UninstallActionHandler)();
-typedef NSString* (^ StringTranslationHandler)(NSString* original);
+typedef void (^UninstallActionHandler)();
+typedef NSString* (^StringTranslationHandler)(NSString* original);
 
 typedef enum {
   UNINSTALL_DIALOG_UNDEFINED,
@@ -10,7 +10,7 @@ typedef enum {
 } TUninstallDialogState;
 
 @interface UninstallDialog : NSObject<NSWindowDelegate> {
-  @public
+ @public
   IBOutlet NSWindow* window_;
   IBOutlet NSTextField* dialogTitle_;
   IBOutlet NSTextField* dialogText_;
@@ -28,30 +28,30 @@ typedef enum {
   StringTranslationHandler translator_;
 }
 
--(UninstallDialog*)init;
+- (UninstallDialog*)init;
 
--(void)setTranslator:(StringTranslationHandler)translator;
--(void)setUnistallAction:(UninstallActionHandler)handler;
+- (void)setTranslator:(StringTranslationHandler)translator;
+- (void)setUnistallAction:(UninstallActionHandler)handler;
 
--(void)show;
+- (void)show;
 
--(bool)transitionIntoState:(TUninstallDialogState)state;
+- (bool)transitionIntoState:(TUninstallDialogState)state;
 
--(IBAction)uninstall:(id)sender;
--(IBAction)cancel:(id)sender;
--(IBAction)quit:(id)sender;
--(IBAction)toggleDetails:(id)sender;
+- (IBAction)uninstall:(id)sender;
+- (IBAction)cancel:(id)sender;
+- (IBAction)quit:(id)sender;
+- (IBAction)toggleDetails:(id)sender;
 
--(void)setup;
--(void)showDetails;
--(void)presentErrorMessage:(NSMutableAttributedString*)consoleText;
--(void)presentSuccessMessage:(NSMutableAttributedString*)consoleText;
+- (void)setup;
+- (void)showDetails;
+- (void)presentErrorMessage:(NSMutableAttributedString*)consoleText;
+- (void)presentSuccessMessage:(NSMutableAttributedString*)consoleText;
 
--(IBAction)showCancelAndUninstallButtons:(id)sender;
--(IBAction)showQuitButton:(id)sender;
--(IBAction)showProgressIndicator:(id)sender;
+- (IBAction)showCancelAndUninstallButtons:(id)sender;
+- (IBAction)showQuitButton:(id)sender;
+- (IBAction)showProgressIndicator:(id)sender;
 
--(void)clearConsole;
--(void)printToConsole:(NSMutableAttributedString*)text;
+- (void)clearConsole;
+- (void)printToConsole:(NSMutableAttributedString*)text;
 
 @end

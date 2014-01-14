@@ -4,7 +4,7 @@ ApplicationDidFinishLaunchingEvent gAppDidFinishLaunchingEvent = NULL;
 
 @implementation AppDelegate
 
--(void) applicationDidFinishLaunching:(NSNotification*)aNotification {
+- (void)applicationDidFinishLaunching:(NSNotification*)aNotification {
   if (gAppDidFinishLaunchingEvent) {
     gAppDidFinishLaunchingEvent();
   }

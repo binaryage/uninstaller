@@ -52,7 +52,7 @@ int isExecFile(const char* name) {
 }
 
 char* which(const char* filename) {
-  char* path, * p, * n;
+  char* path, *p, *n;
 
   path = getenv("PATH");
 
@@ -94,12 +94,8 @@ int cocoaSudo(char* executable, char* commandArgs[], char* icon, char* prompt) {
   OSStatus status;
   AuthorizationRef authRef;
 
-  AuthorizationItem right = {
-    kAuthorizationRightExecute, 0, NULL, 0
-  };
-  AuthorizationRights rightSet = {
-    1, &right
-  };
+  AuthorizationItem right = {kAuthorizationRightExecute, 0, NULL, 0};
+  AuthorizationRights rightSet = {1, &right};
 
   AuthorizationEnvironment myAuthorizationEnvironment;
   AuthorizationItem kAuthEnv[2];
@@ -144,10 +140,7 @@ int cocoaSudo(char* executable, char* commandArgs[], char* icon, char* prompt) {
     NSLog(@"Could not create authorization reference object.");
     status = errAuthorizationBadAddress;
   } else {
-    flags = kAuthorizationFlagDefaults |
-            kAuthorizationFlagInteractionAllowed |
-            kAuthorizationFlagPreAuthorize |
-            kAuthorizationFlagExtendRights;
+    flags = kAuthorizationFlagDefaults | kAuthorizationFlagInteractionAllowed | kAuthorizationFlagPreAuthorize | kAuthorizationFlagExtendRights;
 
     status = AuthorizationCopyRights(authRef, &rightSet, &myAuthorizationEnvironment, flags, NULL);
   }

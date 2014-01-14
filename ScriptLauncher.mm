@@ -10,10 +10,10 @@ int runUninstallerScript(NSString* scriptPath, NSString* cocoasudoPath, NSString
     NSFileHandle* readStdOutHandle = [pipe fileHandleForReading];
 
     [readStdOutHandle setReadabilityHandler:^(NSFileHandle* file) {
-       NSData* data = [file availableData];
-       NSString* text = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-       presentationHandler(text);
-     }];
+      NSData* data = [file availableData];
+      NSString* text = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+      presentationHandler(text);
+    }];
 
     // redirect both stdout and stderr into our pipe
     [task setStandardOutput:pipe];
@@ -23,7 +23,7 @@ int runUninstallerScript(NSString* scriptPath, NSString* cocoasudoPath, NSString
   if (!cocoasudoPath) {
     // in non-interactive mode run the applescript directly using osascript
     [task setLaunchPath:@"/usr/bin/osascript"];
-    [task setArguments:@[scriptPath]];
+    [task setArguments:@[ scriptPath ]];
   } else {
     // in interactive mode apply cocoasudo wrapper
 
@@ -32,19 +32,20 @@ int runUninstallerScript(NSString* scriptPath, NSString* cocoasudoPath, NSString
     if (overlayIconPath) {
       NSFileManager* fileManager = [[NSFileManager alloc] init];
       [fileManager copyItemAtPath:overlayIconPath toPath:tempIconPath error:nil];
-      [fileManager setAttributes:@{ NSFilePosixPermissions: @0644 } ofItemAtPath:tempIconPath error:nil];
+      [fileManager setAttributes:@{
+                                   NSFilePosixPermissions : @0644
+                                 }
+                    ofItemAtPath:tempIconPath
+                           error:nil];
     }
 
     // set task arguments
     [task setLaunchPath:cocoasudoPath];
-    [task setArguments:@[[NSString stringWithFormat:@"--prompt=%@", prompt],
-                         [NSString stringWithFormat:@"--icon=%@", tempIconPath],
-                         @"/usr/bin/osascript",
-                         scriptPath]];
+    [task setArguments:@[ [NSString stringWithFormat:@"--prompt=%@", prompt], [NSString stringWithFormat:@"--icon=%@", tempIconPath], @"/usr/bin/osascript", scriptPath ]];
   }
   if (prelaunchHandler) {
     if (!prelaunchHandler(task)) {
-      return 0; // cancelled
+      return 0;  // cancelled
     }
   }
 
@@ -65,12 +66,8 @@ int checkAdminPrivileges(AuthorizationFlags flags) {
   }
 
   // kAuthorizationRightExecute == "system.privilege.admin" == running with sudo
-  AuthorizationItem right = {
-    kAuthorizationRightExecute, 0, NULL, 0
-  };
-  AuthorizationRights rights = {
-    1, &right
-  };
+  AuthorizationItem right = {kAuthorizationRightExecute, 0, NULL, 0};
+  AuthorizationRights rights = {1, &right};
 
   // call AuthorizationCopyRights to determine current rights
   status = AuthorizationCopyRights(authorizationRef, &rights, NULL, flags, NULL);
