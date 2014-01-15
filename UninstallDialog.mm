@@ -76,7 +76,8 @@
   } else if (state == UNINSTALL_DIALOG_ERROR) {
     [self showCancelAndUninstallButtons:self];
     [dialogTitle_ setStringValue:translator_(@"*APP* uninstallation failed")];
-    [dialogText_ setStringValue:translator_(@"The uninstall script encountered problems. Please see the details. Please report bugs to support@binaryage.com.")];
+    [dialogText_
+        setStringValue:translator_(@"The uninstall script encountered problems. Please see the details. Please report bugs to support@binaryage.com.")];
   }
   [window_ display];
   return true;

@@ -200,7 +200,10 @@ void usage(char* appNameFull) {
     appName++;
   }
 
-  fprintf(stderr, "usage: %s [--icon=icon.tiff] [--prompt=prompt...] command\n  --icon=[filename]: optional argument to specify a custom icon\n  --prompt=[prompt]: optional argument to specify a custom prompt\n", appName);
+  fprintf(stderr,
+          "usage: %s [--icon=icon.tiff] [--prompt=prompt...] command\n  --icon=[filename]: optional argument to specify a custom icon\n  --prompt=[prompt]: "
+          "optional argument to specify a custom prompt\n",
+          appName);
 }
 
 int main(int argc, char* argv[]) {

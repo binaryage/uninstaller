@@ -2,7 +2,12 @@
 
 #import "ScriptLauncher.h"
 
-int runUninstallerScript(NSString* scriptPath, NSString* cocoasudoPath, NSString* overlayIconPath, NSString* prompt, TaskPresentationHandler presentationHandler, TaskPreLaunchHandler prelaunchHandler) {
+int runUninstallerScript(NSString* scriptPath,
+                         NSString* cocoasudoPath,
+                         NSString* overlayIconPath,
+                         NSString* prompt,
+                         TaskPresentationHandler presentationHandler,
+                         TaskPreLaunchHandler prelaunchHandler) {
   NSTask* task = [[NSTask alloc] init];
 
   if (presentationHandler) {
@@ -41,7 +46,8 @@ int runUninstallerScript(NSString* scriptPath, NSString* cocoasudoPath, NSString
 
     // set task arguments
     [task setLaunchPath:cocoasudoPath];
-    [task setArguments:@[ [NSString stringWithFormat:@"--prompt=%@", prompt], [NSString stringWithFormat:@"--icon=%@", tempIconPath], @"/usr/bin/osascript", scriptPath ]];
+    [task setArguments:@
+          [ [NSString stringWithFormat:@"--prompt=%@", prompt], [NSString stringWithFormat:@"--icon=%@", tempIconPath], @"/usr/bin/osascript", scriptPath ]];
   }
   if (prelaunchHandler) {
     if (!prelaunchHandler(task)) {
