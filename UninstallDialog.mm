@@ -14,7 +14,7 @@
 - (void)setTranslator:(StringTranslationHandler)translator {
   translator_ = translator;
   if (!translator_) {
-    translator_ = ^(NSString * original) {
+    translator_ = ^(NSString* original) {
       // default pass through translator
       return original;
     };

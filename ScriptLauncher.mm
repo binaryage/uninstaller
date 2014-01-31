@@ -15,9 +15,9 @@ int runUninstallerScript(NSString* scriptPath,
     NSFileHandle* readStdOutHandle = [pipe fileHandleForReading];
 
     [readStdOutHandle setReadabilityHandler:^(NSFileHandle* file) {
-      NSData* data = [file availableData];
-      NSString* text = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-      presentationHandler(text);
+        NSData* data = [file availableData];
+        NSString* text = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        presentationHandler(text);
     }];
 
     // redirect both stdout and stderr into our pipe
@@ -37,17 +37,17 @@ int runUninstallerScript(NSString* scriptPath,
     if (overlayIconPath) {
       NSFileManager* fileManager = [[NSFileManager alloc] init];
       [fileManager copyItemAtPath:overlayIconPath toPath:tempIconPath error:nil];
-      [fileManager setAttributes:@{
-                                   NSFilePosixPermissions : @0644
-                                 }
-                    ofItemAtPath:tempIconPath
-                           error:nil];
+      [fileManager setAttributes:@{ NSFilePosixPermissions : @0644 } ofItemAtPath:tempIconPath error:nil];
     }
 
     // set task arguments
     [task setLaunchPath:cocoasudoPath];
-    [task setArguments:@
-          [ [NSString stringWithFormat:@"--prompt=%@", prompt], [NSString stringWithFormat:@"--icon=%@", tempIconPath], @"/usr/bin/osascript", scriptPath ]];
+    [task setArguments:@[
+                         [NSString stringWithFormat:@"--prompt=%@", prompt],
+                         [NSString stringWithFormat:@"--icon=%@", tempIconPath],
+                         @"/usr/bin/osascript",
+                         scriptPath
+                       ]];
   }
   if (prelaunchHandler) {
     if (!prelaunchHandler(task)) {

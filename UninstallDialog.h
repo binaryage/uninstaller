@@ -1,13 +1,13 @@
 typedef void (^UninstallActionHandler)();
 typedef NSString* (^StringTranslationHandler)(NSString* original);
 
-typedef enum {
+typedef NS_ENUM(NSInteger, TUninstallDialogState) {
   UNINSTALL_DIALOG_UNDEFINED,
   UNINSTALL_DIALOG_NORMAL,
   UNINSTALL_DIALOG_PROGRESS,
   UNINSTALL_DIALOG_SUCCESS,
   UNINSTALL_DIALOG_ERROR,
-} TUninstallDialogState;
+};
 
 @interface UninstallDialog : NSObject<NSWindowDelegate> {
  @public
