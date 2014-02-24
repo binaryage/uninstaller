@@ -1,4 +1,4 @@
-//!bagen generate binaryage Uninstaller Release Uninstaller > Uninstaller_Release_Uninstaller_generated.xcconfig
+//!bagen generate binaryage Uninstaller Release Uninstaller
 //
 // this file should be set as Release configuration for target Uninstaller in Uninstaller.xcodeproj
 

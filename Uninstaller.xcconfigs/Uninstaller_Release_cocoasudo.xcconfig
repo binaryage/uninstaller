@@ -1,4 +1,4 @@
-//!bagen generate binaryage Uninstaller Release cocoasudo > Uninstaller_Release_cocoasudo_generated.xcconfig
+//!bagen generate binaryage Uninstaller Release cocoasudo
 //
 // this file should be set as Release configuration for target cocoasudo in Uninstaller.xcodeproj
 
