@@ -6,6 +6,13 @@
   if (self = [super init]) {
     state_ = UNINSTALL_DIALOG_UNDEFINED;
     consoleFont_ = [NSFont fontWithName:@"Courier New" size:10];
+    if (!consoleFont_) {
+      // fall-back to system font if Courier is not available for some reason
+      consoleFont_ = [NSFont systemFontOfSize:[NSFont smallSystemFontSize]];
+      if (!consoleFont_) {
+        NSLog(@"Unable to obtain system font for uninstall dialog.");
+      }
+    }
     [self setTranslator:nil];
   }
   return self;
@@ -153,7 +160,9 @@
 }
 
 - (void)printToConsole:(NSMutableAttributedString*)text {
-  [text addAttribute:NSFontAttributeName value:consoleFont_ range:NSMakeRange(0, [text length])];
+  if (consoleFont_) {
+    [text addAttribute:NSFontAttributeName value:consoleFont_ range:NSMakeRange(0, [text length])];
+  }
   [[console_ textStorage] appendAttributedString:text];
   [console_ scrollRangeToVisible:NSMakeRange([[console_ string] length], 0)];
 }
