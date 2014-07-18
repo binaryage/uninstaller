@@ -33,12 +33,14 @@
 }
 
 - (void)show {
-  BOOL nibOk = [NSBundle loadNibNamed:@"UninstallDialog" owner:self];
-
+  static NSArray* holdNibObjects;
+  NSArray* nibObjects;
+  BOOL nibOk = [[NSBundle bundleForClass:[self class]] loadNibNamed:@"UninstallDialog" owner:self topLevelObjects:&nibObjects];
   if (!nibOk) {
     NSLog(@"unexpected error: loadNibNamed UninstallDialog failed");
     return;
   }
+  holdNibObjects = nibObjects;
 
   [self setup];
 
