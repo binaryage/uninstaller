@@ -15,9 +15,9 @@ int runUninstallerScript(NSString* scriptPath,
     NSFileHandle* readStdOutHandle = [pipe fileHandleForReading];
 
     [readStdOutHandle setReadabilityHandler:^(NSFileHandle* file) {
-        NSData* data = [file availableData];
-        NSString* text = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        presentationHandler(text);
+      NSData* data = [file availableData];
+      NSString* text = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+      presentationHandler(text);
     }];
 
     // redirect both stdout and stderr into our pipe
@@ -43,11 +43,11 @@ int runUninstallerScript(NSString* scriptPath,
     // set task arguments
     [task setLaunchPath:cocoasudoPath];
     [task setArguments:@[
-                         [NSString stringWithFormat:@"--prompt=%@", prompt],
-                         [NSString stringWithFormat:@"--icon=%@", tempIconPath],
-                         @"/usr/bin/osascript",
-                         scriptPath
-                       ]];
+      [NSString stringWithFormat:@"--prompt=%@", prompt],
+      [NSString stringWithFormat:@"--icon=%@", tempIconPath],
+      @"/usr/bin/osascript",
+      scriptPath
+    ]];
   }
   if (prelaunchHandler) {
     if (!prelaunchHandler(task)) {

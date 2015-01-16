@@ -65,27 +65,27 @@ int main(int argc, const char* argv[]) {
       // called when user clicks the "uninstall" button (could be multiple times when script fails)
       auto action = ^() {
         dispatch_async(dispatch_get_main_queue(), ^{  // all UI updates must be performed on the main thread
-            [dialog clearConsole];
-            [dialog printToConsole:colorizeString(translator(@"Running uninstall script:\n"), [NSColor blueColor])];
+          [dialog clearConsole];
+          [dialog printToConsole:colorizeString(translator(@"Running uninstall script:\n"), [NSColor blueColor])];
         });
 
         // called when uninstall script task finishes
         auto terminationHandler = ^(NSTask* task) {
           dispatch_async(dispatch_get_main_queue(), ^{  // all UI updates must be performed on the main thread
-              int status = [task terminationStatus];
-              if (status == 0) {
-                [dialog transitionIntoState:UNINSTALL_DIALOG_SUCCESS];
-                [dialog presentSuccessMessage:colorizeString(translator(@"Uninstall script finished successfully.\n"), [NSColor blueColor])];
+            int status = [task terminationStatus];
+            if (status == 0) {
+              [dialog transitionIntoState:UNINSTALL_DIALOG_SUCCESS];
+              [dialog presentSuccessMessage:colorizeString(translator(@"Uninstall script finished successfully.\n"), [NSColor blueColor])];
+            } else {
+              [dialog transitionIntoState:UNINSTALL_DIALOG_ERROR];
+              [dialog showDetails];
+              if (status == 101) {
+                [dialog presentErrorMessage:colorizeString(translator(@"Uninstall script needs admin rights.\n"), [NSColor redColor])];
               } else {
-                [dialog transitionIntoState:UNINSTALL_DIALOG_ERROR];
-                [dialog showDetails];
-                if (status == 101) {
-                  [dialog presentErrorMessage:colorizeString(translator(@"Uninstall script needs admin rights.\n"), [NSColor redColor])];
-                } else {
-                  NSString* failedMessage = [NSString stringWithFormat:translator(@"Uninstall script failed with error [%d].\n"), status];
-                  [dialog presentErrorMessage:colorizeString(failedMessage, [NSColor redColor])];
-                }
+                NSString* failedMessage = [NSString stringWithFormat:translator(@"Uninstall script failed with error [%d].\n"), status];
+                [dialog presentErrorMessage:colorizeString(failedMessage, [NSColor redColor])];
               }
+            }
           });
         };
 
@@ -99,7 +99,7 @@ int main(int argc, const char* argv[]) {
         // called continuously with stream of task's stdout+stderr output
         auto outputHandler = ^(NSString* chunk) {
           dispatch_async(dispatch_get_main_queue(), ^{  // all UI updates must be performed on the main thread
-              [dialog printToConsole:[[NSMutableAttributedString alloc] initWithString:chunk]];
+            [dialog printToConsole:[[NSMutableAttributedString alloc] initWithString:chunk]];
           });
         };
 
@@ -114,7 +114,7 @@ int main(int argc, const char* argv[]) {
       // this is ugly, but quick solution without polluting AppDelegate with main logic
       gAppDidFinishLaunchingEvent = ^() {
         dispatch_async(dispatch_get_main_queue(), ^{  // all UI updates must be performed on the main thread
-            [dialog show];
+          [dialog show];
         });
       };
 
