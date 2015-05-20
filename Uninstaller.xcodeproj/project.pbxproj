@@ -23,6 +23,8 @@
 		D678109017F13C0100A3BBD8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D678108F17F13C0100A3BBD8 /* MainMenu.xib */; };
 		D678109317F13C6A00A3BBD8 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = D678109217F13C6A00A3BBD8 /* AppDelegate.mm */; };
 		D6AE595B17F1182E00B8CE99 /* OverlayIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D6AE595717F1182E00B8CE99 /* OverlayIcon.png */; };
+		D6D55BAE1B0C4D3900227B08 /* Uninstaller_ReleaseLogging_cocoasudo.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D6D55BAC1B0C4D3900227B08 /* Uninstaller_ReleaseLogging_cocoasudo.xcconfig */; };
+		D6D55BAF1B0C4D3900227B08 /* Uninstaller_ReleaseLogging_Uninstaller.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D6D55BAD1B0C4D3900227B08 /* Uninstaller_ReleaseLogging_Uninstaller.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,8 @@
 		D67B502E18B34BB700FB4D62 /* Bengali */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Bengali; path = "../uninstaller-resources/Bengali.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D67B502F18B34BB700FB4D62 /* Vietnamese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Vietnamese; path = "../uninstaller-resources/Vietnamese.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D6AE595717F1182E00B8CE99 /* OverlayIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OverlayIcon.png; sourceTree = "<group>"; };
+		D6D55BAC1B0C4D3900227B08 /* Uninstaller_ReleaseLogging_cocoasudo.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Uninstaller_ReleaseLogging_cocoasudo.xcconfig; path = Uninstaller.xcconfigs/Uninstaller_ReleaseLogging_cocoasudo.xcconfig; sourceTree = "<group>"; };
+		D6D55BAD1B0C4D3900227B08 /* Uninstaller_ReleaseLogging_Uninstaller.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Uninstaller_ReleaseLogging_Uninstaller.xcconfig; path = Uninstaller.xcconfigs/Uninstaller_ReleaseLogging_Uninstaller.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,8 @@
 		D6407F6817FA7191001D1D21 /* Configs */ = {
 			isa = PBXGroup;
 			children = (
+				D6D55BAC1B0C4D3900227B08 /* Uninstaller_ReleaseLogging_cocoasudo.xcconfig */,
+				D6D55BAD1B0C4D3900227B08 /* Uninstaller_ReleaseLogging_Uninstaller.xcconfig */,
 				D6407F6917FA719D001D1D21 /* Uninstaller_Debug_cocoasudo.xcconfig */,
 				D6407F6A17FA719D001D1D21 /* Uninstaller_Debug_Uninstaller.xcconfig */,
 				D6407F6B17FA719D001D1D21 /* Uninstaller_Release_cocoasudo.xcconfig */,
@@ -303,6 +309,8 @@
 				D6780FF317F118B500A3BBD8 /* UninstallerIcon.icns in Resources */,
 				D678109017F13C0100A3BBD8 /* MainMenu.xib in Resources */,
 				D605141A17EFCC9500BAC816 /* cocoasudo in Resources */,
+				D6D55BAF1B0C4D3900227B08 /* Uninstaller_ReleaseLogging_Uninstaller.xcconfig in Resources */,
+				D6D55BAE1B0C4D3900227B08 /* Uninstaller_ReleaseLogging_cocoasudo.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,7 +424,7 @@
 		};
 		D6D55B691B0C3D3600227B08 /* ReleaseLogging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D6407F6C17FA719D001D1D21 /* Uninstaller_Release_Uninstaller.xcconfig */;
+			baseConfigurationReference = D6D55BAD1B0C4D3900227B08 /* Uninstaller_ReleaseLogging_Uninstaller.xcconfig */;
 			buildSettings = {
 				SDKROOT = macosx;
 			};
@@ -424,7 +432,7 @@
 		};
 		D6D55B6A1B0C3D3600227B08 /* ReleaseLogging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D6407F6B17FA719D001D1D21 /* Uninstaller_Release_cocoasudo.xcconfig */;
+			baseConfigurationReference = D6D55BAC1B0C4D3900227B08 /* Uninstaller_ReleaseLogging_cocoasudo.xcconfig */;
 			buildSettings = {
 			};
 			name = ReleaseLogging;
