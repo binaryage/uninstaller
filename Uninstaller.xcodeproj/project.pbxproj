@@ -408,6 +408,27 @@
 			};
 			name = Release;
 		};
+		D6D55B681B0C3D3600227B08 /* ReleaseLogging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = ReleaseLogging;
+		};
+		D6D55B691B0C3D3600227B08 /* ReleaseLogging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6407F6C17FA719D001D1D21 /* Uninstaller_Release_Uninstaller.xcconfig */;
+			buildSettings = {
+				SDKROOT = macosx;
+			};
+			name = ReleaseLogging;
+		};
+		D6D55B6A1B0C3D3600227B08 /* ReleaseLogging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6407F6B17FA719D001D1D21 /* Uninstaller_Release_cocoasudo.xcconfig */;
+			buildSettings = {
+			};
+			name = ReleaseLogging;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -416,6 +437,7 @@
 			buildConfigurations = (
 				D605141117EFCB5B00BAC816 /* Debug */,
 				D605141217EFCB5B00BAC816 /* Release */,
+				D6D55B6A1B0C3D3600227B08 /* ReleaseLogging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -425,6 +447,7 @@
 			buildConfigurations = (
 				D64CA6FA17EDF89C00522544 /* Debug */,
 				D64CA6FB17EDF89C00522544 /* Release */,
+				D6D55B681B0C3D3600227B08 /* ReleaseLogging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -434,6 +457,7 @@
 			buildConfigurations = (
 				D64CA6FD17EDF89C00522544 /* Debug */,
 				D64CA6FE17EDF89C00522544 /* Release */,
+				D6D55B691B0C3D3600227B08 /* ReleaseLogging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
