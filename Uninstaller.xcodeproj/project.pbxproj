@@ -23,8 +23,6 @@
 		D678109017F13C0100A3BBD8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D678108F17F13C0100A3BBD8 /* MainMenu.xib */; };
 		D678109317F13C6A00A3BBD8 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = D678109217F13C6A00A3BBD8 /* AppDelegate.mm */; };
 		D6AE595B17F1182E00B8CE99 /* OverlayIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D6AE595717F1182E00B8CE99 /* OverlayIcon.png */; };
-		D6D55BAE1B0C4D3900227B08 /* Uninstaller_ReleaseLogging_cocoasudo.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D6D55BAC1B0C4D3900227B08 /* Uninstaller_ReleaseLogging_cocoasudo.xcconfig */; };
-		D6D55BAF1B0C4D3900227B08 /* Uninstaller_ReleaseLogging_Uninstaller.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D6D55BAD1B0C4D3900227B08 /* Uninstaller_ReleaseLogging_Uninstaller.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -309,8 +307,6 @@
 				D6780FF317F118B500A3BBD8 /* UninstallerIcon.icns in Resources */,
 				D678109017F13C0100A3BBD8 /* MainMenu.xib in Resources */,
 				D605141A17EFCC9500BAC816 /* cocoasudo in Resources */,
-				D6D55BAF1B0C4D3900227B08 /* Uninstaller_ReleaseLogging_Uninstaller.xcconfig in Resources */,
-				D6D55BAE1B0C4D3900227B08 /* Uninstaller_ReleaseLogging_cocoasudo.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
