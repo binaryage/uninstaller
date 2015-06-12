@@ -86,9 +86,9 @@
 		D678108F17F13C0100A3BBD8 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = SOURCE_ROOT; };
 		D678109117F13C6A00A3BBD8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		D678109217F13C6A00A3BBD8 /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = SOURCE_ROOT; };
-		D67B435319AC97E300E1F8AE /* German */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = German; path = ../uninstaller-resources/German.lproj/Localizable.strings; sourceTree = "<group>"; };
-		D67B435419AC97E300E1F8AE /* Indonesian */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Indonesian; path = ../uninstaller-resources/Indonesian.lproj/Localizable.strings; sourceTree = "<group>"; };
-		D67B435519AC97E300E1F8AE /* Malay */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Malay; path = ../uninstaller-resources/Malay.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D67B435319AC97E300E1F8AE /* German */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = German; path = "../uninstaller-resources/German.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		D67B435419AC97E300E1F8AE /* Indonesian */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Indonesian; path = "../uninstaller-resources/Indonesian.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		D67B435519AC97E300E1F8AE /* Malay */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Malay; path = "../uninstaller-resources/Malay.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D67B502E18B34BB700FB4D62 /* Bengali */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Bengali; path = "../uninstaller-resources/Bengali.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D67B502F18B34BB700FB4D62 /* Vietnamese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Vietnamese; path = "../uninstaller-resources/Vietnamese.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D6AE595717F1182E00B8CE99 /* OverlayIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OverlayIcon.png; sourceTree = "<group>"; };
@@ -258,7 +258,7 @@
 		D64CA6C317EDF89C00522544 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = BinaryAge;
 			};
 			buildConfigurationList = D64CA6C617EDF89C00522544 /* Build configuration list for PBXProject "Uninstaller" */;
@@ -387,6 +387,8 @@
 		D64CA6FA17EDF89C00522544 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				ONLY_ACTIVE_ARCH = YES;
 			};
 			name = Debug;
 		};
@@ -400,6 +402,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D6407F6A17FA719D001D1D21 /* Uninstaller_Debug_Uninstaller.xcconfig */;
 			buildSettings = {
+				PRODUCT_BUNDLE_IDENTIFIER = com.binaryage.totalfinder.uninstaller;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -408,6 +411,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D6407F6C17FA719D001D1D21 /* Uninstaller_Release_Uninstaller.xcconfig */;
 			buildSettings = {
+				PRODUCT_BUNDLE_IDENTIFIER = com.binaryage.totalfinder.uninstaller;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -422,6 +426,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D6D55BAD1B0C4D3900227B08 /* Uninstaller_ReleaseLogging_Uninstaller.xcconfig */;
 			buildSettings = {
+				PRODUCT_BUNDLE_IDENTIFIER = com.binaryage.totalfinder.uninstaller;
 				SDKROOT = macosx;
 			};
 			name = ReleaseLogging;
