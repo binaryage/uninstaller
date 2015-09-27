@@ -146,7 +146,7 @@ int cocoaSudo(char* executable, char* commandArgs[], char* icon, char* prompt) {
   }
 
   if (status == errAuthorizationSuccess) {
-    FILE* ioPipe;
+    FILE* ioPipe = NULL;
     char buffer[1024];
     size_t bytesRead;
 
@@ -155,7 +155,14 @@ int cocoaSudo(char* executable, char* commandArgs[], char* icon, char* prompt) {
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
     status = AuthorizationExecuteWithPrivileges(authRef, executable, flags, commandArgs, &ioPipe);
 #pragma clang diagnostic pop
-
+    if (status != errAuthorizationSuccess) {
+      NSLog(@"AuthorizationExecuteWithPrivileges failed with code %d", status);
+      return 102;
+    }
+    if (!ioPipe) {
+      NSLog(@"AuthorizationExecuteWithPrivileges returned null pipe");
+      return 103;
+    }
     /* Just pipe processes' stdout to our stdout for now; hopefully can add stdin pipe later as well */
 
     for (;;) {
