@@ -64,6 +64,8 @@ int main(int argc, const char* argv[]) {
 
       // called when user clicks the "uninstall" button (could be multiple times when script fails)
       auto action = ^() {
+        bool __block encounteredSystemLibraryNote = false;
+
         dispatch_async(dispatch_get_main_queue(), ^{  // all UI updates must be performed on the main thread
           [dialog clearConsole];
           [dialog printToConsole:colorizeString(translator(@"Running uninstall script:\n"), [NSColor blueColor])];
@@ -74,8 +76,14 @@ int main(int argc, const char* argv[]) {
           dispatch_async(dispatch_get_main_queue(), ^{  // all UI updates must be performed on the main thread
             int status = [task terminationStatus];
             if (status == 0) {
-              [dialog transitionIntoState:UNINSTALL_DIALOG_SUCCESS];
-              [dialog presentSuccessMessage:colorizeString(translator(@"Uninstall script finished successfully.\n"), [NSColor blueColor])];
+              if (!encounteredSystemLibraryNote) {
+                [dialog transitionIntoState:UNINSTALL_DIALOG_SUCCESS];
+                [dialog presentSuccessMessage:colorizeString(translator(@"Uninstall script finished successfully.\n"), [NSColor blueColor])];
+              } else {
+                [dialog transitionIntoState:UNINSTALL_DIALOG_ERROR];
+                [dialog showDetails];
+                [dialog presentSuccessMessage:colorizeString(translator(@"You need to remove some parts manually in Recover OS.\n"), [NSColor redColor])];
+              }
             } else {
               [dialog transitionIntoState:UNINSTALL_DIALOG_ERROR];
               [dialog showDetails];
@@ -98,6 +106,9 @@ int main(int argc, const char* argv[]) {
 
         // called continuously with stream of task's stdout+stderr output
         auto outputHandler = ^(NSString* chunk) {
+          if ([chunk rangeOfString:@"/System/Library/ScriptingAdditions/TotalFinder.osax is present"].location != NSNotFound) {
+            encounteredSystemLibraryNote = true;
+          }
           dispatch_async(dispatch_get_main_queue(), ^{  // all UI updates must be performed on the main thread
             [dialog printToConsole:[[NSMutableAttributedString alloc] initWithString:chunk]];
           });
