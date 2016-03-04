@@ -72,7 +72,7 @@
   } else if (state == UNINSTALL_DIALOG_SUCCESS) {
     [self showQuitButton:self];
     [dialogTitle_ setStringValue:translator_(@"*APP* has been uninstalled")];
-    [dialogText_ setStringValue:translator_(@"Have a nice day.")];
+    [dialogText_ setStringValue:translator_(@"Thanks for trying *APP*.")];
   } else if (state == UNINSTALL_DIALOG_ERROR) {
     [self showCancelAndUninstallButtons:self];
     [dialogTitle_ setStringValue:translator_(@"*APP* uninstallation failed")];
