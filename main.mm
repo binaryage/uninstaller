@@ -82,7 +82,7 @@ int main(int argc, const char* argv[]) {
               } else {
                 [dialog transitionIntoState:UNINSTALL_DIALOG_ERROR];
                 [dialog showDetails];
-                [dialog presentSuccessMessage:colorizeString(translator(@"You need to remove some parts manually in Recover OS.\n"), [NSColor redColor])];
+                [dialog presentSuccessMessage:colorizeString(translator(@"You have to remove some files manually in Recovery OS.\n"), [NSColor redColor])];
               }
             } else {
               [dialog transitionIntoState:UNINSTALL_DIALOG_ERROR];
