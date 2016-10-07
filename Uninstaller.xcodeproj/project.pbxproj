@@ -191,7 +191,6 @@
 				D6AE595717F1182E00B8CE99 /* OverlayIcon.png */,
 			);
 			name = Resources;
-			path = "../totalspaces-i18n/uninstaller";
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
