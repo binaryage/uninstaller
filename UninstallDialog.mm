@@ -11,6 +11,12 @@
   return self;
 }
 
+- (void)awakeFromNib
+{
+	[showDetails_ setHidden:YES];
+	[detailsLabel_ setHidden:YES];
+}
+
 -(void)setTranslator:(StringTranslationHandler)translator {
   translator_ = translator;
   if (!translator_) {
@@ -115,6 +121,8 @@
 
 -(IBAction) uninstall:(id)sender {
   uninstallAction_();
+  [showDetails_ setHidden:NO];
+  [detailsLabel_ setHidden:NO];
 }
 
 - (IBAction)toggleDetails:(id)sender {
