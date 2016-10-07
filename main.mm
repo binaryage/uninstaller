@@ -90,7 +90,6 @@ int main(int argc, const char * argv[]) {
         
         // called right before launching the task
         auto prelaunchHandler = ^(NSTask* task) {
-          [task setTerminationHandler:terminationHandler];
           [dialog transitionIntoState:UNINSTALL_DIALOG_PROGRESS];
           return true;
         };
@@ -105,7 +104,7 @@ int main(int argc, const char * argv[]) {
         // run uninstaller with our GUI hooks
         NSString* overlayIconPath = [[NSBundle mainBundle] pathForImageResource:@"OverlayIcon"];
         NSString* prompt = translator(@"Uninstaller needs admin privileges to remove *APP* from your system.");
-        runUninstallerScript(scriptPath, cocoasudoPath, overlayIconPath, prompt, outputHandler, prelaunchHandler);
+        runUninstallerScript(scriptPath, cocoasudoPath, overlayIconPath, prompt, outputHandler, prelaunchHandler, terminationHandler);
       };
 
       [dialog setUnistallAction:action];

@@ -2,7 +2,7 @@
 
 #import "ScriptLauncher.h"
 
-int runUninstallerScript(NSString* scriptPath, NSString* cocoasudoPath, NSString* overlayIconPath, NSString* prompt, TaskPresentationHandler presentationHandler, TaskPreLaunchHandler prelaunchHandler) {
+int runUninstallerScript(NSString* scriptPath, NSString* cocoasudoPath, NSString* overlayIconPath, NSString* prompt, TaskPresentationHandler presentationHandler, TaskPreLaunchHandler prelaunchHandler, TaskPostLaunchHandler postlaunchHandler) {
   NSTask* task = [[NSTask alloc] init];
   if (presentationHandler) {
     NSPipe* pipe = [NSPipe pipe];
@@ -49,6 +49,11 @@ int runUninstallerScript(NSString* scriptPath, NSString* cocoasudoPath, NSString
   
   [task launch];
   [task waitUntilExit];
+
+  if (postlaunchHandler) {
+    postlaunchHandler(task);
+  }
+
   return [task terminationStatus];
 }
 
