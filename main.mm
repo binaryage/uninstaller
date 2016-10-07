@@ -103,7 +103,7 @@ int main(int argc, const char * argv[]) {
         };
         
         // run uninstaller with our GUI hooks
-        NSString* overlayIconPath = [[NSBundle mainBundle] pathForResource:@"OverlayIcon" ofType:@"png"];
+        NSString* overlayIconPath = [[NSBundle mainBundle] pathForImageResource:@"OverlayIcon"];
         NSString* prompt = translator(@"Uninstaller needs admin privileges to remove *APP* from your system.");
         runUninstallerScript(scriptPath, cocoasudoPath, overlayIconPath, prompt, outputHandler, prelaunchHandler);
       };
