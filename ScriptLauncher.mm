@@ -27,7 +27,7 @@ int runUninstallerScript(NSString* scriptPath, NSString* cocoasudoPath, NSString
     // in interactive mode apply cocoasudo wrapper
     
     // copy icon into /tmp to be sure it will get displayed (the security dialog is picky about correct rights)
-    NSString* tempIconPath = @"/tmp/totalfinder-uninstaller-overlay-icon.png";
+    NSString* tempIconPath = @"/tmp/totalspaces-uninstaller-overlay-icon.png";
     if (overlayIconPath) {
       NSFileManager* fileManager = [[NSFileManager alloc] init];
       [fileManager copyItemAtPath:overlayIconPath toPath:tempIconPath error:nil];

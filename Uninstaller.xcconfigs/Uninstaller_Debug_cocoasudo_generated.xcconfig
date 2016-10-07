@@ -58,7 +58,7 @@ ONLY_ACTIVE_ARCH = YES
 STRIP_INSTALLED_PRODUCT = NO
 OTHER_CODE_SIGN_FLAGS = --timestamp=none
 //
-// Base configuration for all TotalFinder projects
+// Base configuration for all TotalSpaces2 projects
 //
 MACOSX_DEPLOYMENT_TARGET = 10.7
 SDKROOT = macosx
@@ -77,7 +77,7 @@ GCC_PRECOMPILE_PREFIX_HEADER = YES
 GCC_PREFIX_HEADER = cocoasudo-Prefix.pch
 GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES
 //
-// Debug mode additions to TotalFinder configs
+// Debug mode additions to TotalSpaces2 configs
 //
 GCC_SYMBOLS_PRIVATE_EXTERN = YES
 //

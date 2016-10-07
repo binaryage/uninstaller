@@ -57,7 +57,7 @@ LLVM_LTO = YES
 ONLY_ACTIVE_ARCH = NO
 STRIP_INSTALLED_PRODUCT = YES
 //
-// Base configuration for all TotalFinder projects
+// Base configuration for all TotalSpaces2 projects
 //
 MACOSX_DEPLOYMENT_TARGET = 10.7
 SDKROOT = macosx
@@ -76,14 +76,14 @@ GCC_PRECOMPILE_PREFIX_HEADER = YES
 GCC_PREFIX_HEADER = Uninstaller-Prefix.pch
 GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES
 //
-// Release mode additions to TotalFinder configs
+// Release mode additions to TotalSpaces2 configs
 //
 //
-// Specific configuration for TotalFinder uninstaller
+// Specific configuration for TotalSpaces2 uninstaller
 //
 INFOPLIST_FILE = ../uninstaller-resources/Uninstaller-Info.plist
 GCC_PREFIX_HEADER = Uninstaller.pch
-PRODUCT_NAME = TotalFinder Uninstaller
+PRODUCT_NAME = TotalSpaces2 Uninstaller
 WRAPPER_EXTENSION = app
 GCC_SYMBOLS_PRIVATE_EXTERN = YES
 //

@@ -14,10 +14,10 @@
         <customObject id="-3" userLabel="Application"/>
         <menu title="AMainMenu" systemMenu="main" id="29">
             <items>
-                <menuItem title="TotalFinder Uninstaller" id="56">
-                    <menu key="submenu" title="TotalFinder Uninstaller" systemMenu="apple" id="57">
+                <menuItem title="TotalSpaces2 Uninstaller" id="56">
+                    <menu key="submenu" title="TotalSpaces2 Uninstaller" systemMenu="apple" id="57">
                         <items>
-                            <menuItem title="About TotalFinder Uninstaller" id="58">
+                            <menuItem title="About TotalSpaces2 Uninstaller" id="58">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="orderFrontStandardAboutPanel:" target="-2" id="142"/>
@@ -32,7 +32,7 @@
                             <menuItem isSeparatorItem="YES" id="144">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Hide TotalFinder Uninstaller" keyEquivalent="h" id="134">
+                            <menuItem title="Hide TotalSpaces2 Uninstaller" keyEquivalent="h" id="134">
                                 <connections>
                                     <action selector="hide:" target="-1" id="367"/>
                                 </connections>
@@ -51,7 +51,7 @@
                             <menuItem isSeparatorItem="YES" id="149">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Quit TotalFinder Uninstaller" keyEquivalent="q" id="136">
+                            <menuItem title="Quit TotalSpaces2 Uninstaller" keyEquivalent="q" id="136">
                                 <connections>
                                     <action selector="terminate:" target="-3" id="449"/>
                                 </connections>
