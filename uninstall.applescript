@@ -42,15 +42,21 @@ on run
 		set stdout to stdout & "    unable to remove /Applications/TotalSpaces2.app" & newline
 	end try
 	
-	
 	set stdout to stdout & "  remove TotalSpaces.osax ..." & newline
 	try
 		do shell script "sudo rm -rf \"/Library/ScriptingAdditions/TotalSpaces.osax\"" with administrator privileges
 	on error
 		set stdout to stdout & "    unable to remove /Library/ScriptingAdditions/TotalSpaces.osax" & newline
-	end try
-		
-	set stdout to stdout & "  relaunch Dock ..." & newline
+    end try
+    
+    set stdout to stdout & "  remove TotalSpaces.osax from system location ..." & newline
+    try
+        do shell script "sudo rm -rf \"/System/Library/ScriptingAdditions/TotalSpaces.osax\"" with administrator privileges
+        on error
+        set stdout to stdout & "    unable to remove /System/Library/ScriptingAdditions/TotalSpaces.osax" & newline
+    end try
+
+    set stdout to stdout & "  relaunch Dock ..." & newline
 	try
 		tell application "Dock" to launch
 	on error
