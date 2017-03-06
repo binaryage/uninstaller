@@ -92,5 +92,5 @@ GCC_SYMBOLS_PRIVATE_EXTERN = YES
 //
 WARNING_CFLAGS = -Wno-gcc-compat -Wthread-safety -Wthread-safety-beta
 GCC_PREPROCESSOR_DEFINITIONS = DEBUG=1 PROJECT=Uninstaller
-OTHER_CFLAGS = -ftrapv -fcatch-undefined-behavior
+OTHER_CFLAGS = -ftrapv
 OTHER_LDFLAGS = -undefined dynamic_lookup -headerpad_max_install_names
