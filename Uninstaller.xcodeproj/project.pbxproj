@@ -35,18 +35,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		D605140417EFCB5B00BAC816 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		D605140617EFCB5B00BAC816 /* cocoasudo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = cocoasudo; sourceTree = BUILT_PRODUCTS_DIR; };
 		D605140717EFCB5B00BAC816 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -223,7 +211,6 @@
 			buildPhases = (
 				D605140217EFCB5B00BAC816 /* Sources */,
 				D605140317EFCB5B00BAC816 /* Frameworks */,
-				D605140417EFCB5B00BAC816 /* CopyFiles */,
 			);
 			buildRules = (
 			);
