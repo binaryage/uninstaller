@@ -245,7 +245,7 @@
 		D64CA6C317EDF89C00522544 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = BinaryAge;
 			};
 			buildConfigurationList = D64CA6C617EDF89C00522544 /* Build configuration list for PBXProject "Uninstaller" */;
