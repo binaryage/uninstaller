@@ -58,7 +58,7 @@
 		D64CA6D117EDF89C00522544 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		D64CA6D217EDF89C00522544 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		D64CA6D317EDF89C00522544 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		D6780FEE17F118B500A3BBD8 /* uninstall.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = uninstall.applescript; sourceTree = "<group>"; };
+		D6780FEE17F118B500A3BBD8 /* uninstall.applescript */ = {isa = PBXFileReference; fileEncoding = 1; lastKnownFileType = sourcecode.applescript; path = uninstall.applescript; sourceTree = "<group>"; };
 		D6780FEF17F118B500A3BBD8 /* Uninstaller-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Uninstaller-Info.plist"; sourceTree = "<group>"; };
 		D6780FF017F118B500A3BBD8 /* UninstallerIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = UninstallerIcon.icns; sourceTree = "<group>"; };
 		D6780FF817F1199700A3BBD8 /* Czech */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Czech; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };

@@ -5,6 +5,9 @@
 #import "ScriptLauncher.h"
 #import "AppDelegate.h"
 
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "ResourceNotFoundInspection"
+
 // shifting our error codes to distinguish them from wrapped script codes
 static int errorCode(int code) {
   const int baseErrorCode = 200;
@@ -40,10 +43,10 @@ int main(int argc, const char* argv[]) {
       // headless uninstallation for sysadmins and homebrew-cask scenario:
       // https://github.com/phinze/homebrew-cask/pull/395
 
-      // first check if we run with admin priviledges
+      // first check if we run with admin privileges
       int isntAdmin = checkAdminPrivileges();
       if (isntAdmin) {
-        return errorCode(isntAdmin);  // no admin priviledges or failed to check them
+        return errorCode(isntAdmin);  // no admin privileges or failed to check them
       }
 
       // ok, we are running with sudo => run the uninstaller script without GUI hooks
@@ -120,7 +123,7 @@ int main(int argc, const char* argv[]) {
         runUninstallerScript(scriptPath, cocoasudoPath, overlayIconPath, prompt, outputHandler, prelaunchHandler);
       };
 
-      [dialog setUnistallAction:action];
+      [dialog setUninstallAction:action];
 
       // this is ugly, but quick solution without polluting AppDelegate with main logic
       gAppDidFinishLaunchingEvent = ^() {
@@ -134,3 +137,5 @@ int main(int argc, const char* argv[]) {
     }
   }
 }
+
+#pragma clang diagnostic pop

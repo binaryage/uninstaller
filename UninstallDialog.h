@@ -31,7 +31,7 @@ typedef NS_ENUM(NSInteger, TUninstallDialogState) {
 - (UninstallDialog*)init;
 
 - (void)setTranslator:(StringTranslationHandler)translator;
-- (void)setUnistallAction:(UninstallActionHandler)handler;
+- (void)setUninstallAction:(UninstallActionHandler)handler;
 
 - (void)show;
 

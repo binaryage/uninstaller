@@ -28,10 +28,12 @@
   }
 }
 
-- (void)setUnistallAction:(UninstallActionHandler)handler {
+- (void)setUninstallAction:(UninstallActionHandler)handler {
   uninstallAction_ = handler;
 }
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunused-variable"
 - (void)show {
   static NSArray* holdNibObjects;
   NSArray* nibObjects;
@@ -50,6 +52,7 @@
   [window_ center];
   [window_ makeKeyAndOrderFront:self];
 }
+#pragma clang diagnostic pop
 
 - (void)setup {
   [self toggleDetails:showDetails_];
