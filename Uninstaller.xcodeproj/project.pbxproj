@@ -390,7 +390,6 @@
 			baseConfigurationReference = D6407F6A17FA719D001D1D21 /* Uninstaller_Debug_Uninstaller.xcconfig */;
 			buildSettings = {
 				PRODUCT_BUNDLE_IDENTIFIER = com.binaryage.totalfinder.uninstaller;
-				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -399,7 +398,6 @@
 			baseConfigurationReference = D6407F6C17FA719D001D1D21 /* Uninstaller_Release_Uninstaller.xcconfig */;
 			buildSettings = {
 				PRODUCT_BUNDLE_IDENTIFIER = com.binaryage.totalfinder.uninstaller;
-				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -414,7 +412,6 @@
 			baseConfigurationReference = D6D55BAD1B0C4D3900227B08 /* Uninstaller_ReleaseLogging_Uninstaller.xcconfig */;
 			buildSettings = {
 				PRODUCT_BUNDLE_IDENTIFIER = com.binaryage.totalfinder.uninstaller;
-				SDKROOT = macosx;
 			};
 			name = ReleaseLogging;
 		};
