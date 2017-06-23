@@ -84,7 +84,7 @@ ENABLE_STRICT_OBJC_MSGSEND = YES;
 COMBINE_HIDPI_IMAGES = YES
 DEBUG_INFORMATION_FORMAT = dwarf-with-dsym
 INFOPLIST_FILE = Uninstaller-Info.plist
-GCC_PREFIX_HEADER = Uninstaller-Prefix.pch
+GCC_PREFIX_HEADER = Uninstaller.pch
 //
 // Specific configuration for TotalFinder uninstaller
 //

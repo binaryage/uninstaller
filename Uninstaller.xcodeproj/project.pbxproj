@@ -52,7 +52,7 @@
 		D6407F6A17FA719D001D1D21 /* Uninstaller_Debug_Uninstaller.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Uninstaller_Debug_Uninstaller.xcconfig; path = Uninstaller.xcconfigs/Uninstaller_Debug_Uninstaller.xcconfig; sourceTree = "<group>"; };
 		D6407F6B17FA719D001D1D21 /* Uninstaller_Release_cocoasudo.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Uninstaller_Release_cocoasudo.xcconfig; path = Uninstaller.xcconfigs/Uninstaller_Release_cocoasudo.xcconfig; sourceTree = "<group>"; };
 		D6407F6C17FA719D001D1D21 /* Uninstaller_Release_Uninstaller.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Uninstaller_Release_Uninstaller.xcconfig; path = Uninstaller.xcconfigs/Uninstaller_Release_Uninstaller.xcconfig; sourceTree = "<group>"; };
-		D6407F7117FA72CA001D1D21 /* cocoasudo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "cocoasudo-Prefix.pch"; sourceTree = "<group>"; };
+		D6407F7117FA72CA001D1D21 /* cocoasudo.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cocoasudo.pch; sourceTree = "<group>"; };
 		D64CA6CB17EDF89C00522544 /* TotalFinder Uninstaller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TotalFinder Uninstaller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D64CA6CE17EDF89C00522544 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D64CA6D117EDF89C00522544 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -184,7 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				D6780FFB17F11A2900A3BBD8 /* cocoasudo.mm */,
-				D6407F7117FA72CA001D1D21 /* cocoasudo-Prefix.pch */,
+				D6407F7117FA72CA001D1D21 /* cocoasudo.pch */,
 			);
 			name = CocoaSudo;
 			sourceTree = "<group>";
