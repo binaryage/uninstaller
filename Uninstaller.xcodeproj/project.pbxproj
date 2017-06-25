@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -249,7 +249,7 @@
 				ORGANIZATIONNAME = BinaryAge;
 			};
 			buildConfigurationList = D64CA6C617EDF89C00522544 /* Build configuration list for PBXProject "Uninstaller" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
