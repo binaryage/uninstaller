@@ -81,7 +81,7 @@ GCC_WARN_UNUSED_VARIABLE = YES;
 ENABLE_STRICT_OBJC_MSGSEND = YES;
 COMBINE_HIDPI_IMAGES = YES
 DEBUG_INFORMATION_FORMAT = dwarf-with-dsym
-INFOPLIST_FILE = Uninstaller-Info.plist
+INFOPLIST_FILE = Info.plist
 GCC_PREFIX_HEADER = Uninstaller.pch
 //
 // Debug mode additions to TotalFinder configs
@@ -89,8 +89,7 @@ GCC_PREFIX_HEADER = Uninstaller.pch
 //
 // Specific configuration for TotalFinder uninstaller
 //
-INFOPLIST_FILE = ../uninstaller-resources/Uninstaller-Info.plist
-GCC_PREFIX_HEADER = Uninstaller.pch
+INFOPLIST_FILE = ../uninstaller-resources/Info.plist
 PRODUCT_NAME = TotalFinder Uninstaller
 WRAPPER_EXTENSION = app
 GCC_SYMBOLS_PRIVATE_EXTERN = YES
