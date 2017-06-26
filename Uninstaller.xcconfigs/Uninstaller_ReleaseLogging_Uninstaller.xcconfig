@@ -9,6 +9,3 @@
 #include "Uninstaller_ReleaseLogging_Uninstaller_generated.xcconfig"
 
 // here you can follow with your custom settings overrides if needed
-
-
-// SDKROOT = macosx
